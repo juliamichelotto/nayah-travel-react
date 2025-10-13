@@ -1,0 +1,48 @@
+.hero {
+  background-image: url('/src/assets/sunset-home.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.4); /* escurece levemente para contraste */
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btnGold {
+  background-color: #CFA052;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btnDark {
+  background-color: #013D36;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btnGold:hover,
+.btnDark:hover {
+  opacity: 0.85;
+}

@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #003b3b;
+  color: white;
+}
+
+.header nav a {
+  margin: 0 0.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+.logo {
+  height: 50px; /* ajuste conforme necessário */
+  object-fit: contain;
+}
