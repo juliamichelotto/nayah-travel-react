@@ -10,11 +10,100 @@
   color: white;
 }
 
+/* .destinos {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+} */
+
+.destinos {
+  text-align: center;
+  background-color: #f9f8f5;
+  padding: 4rem 2rem;
+}
+
+.destinos h2 {
+  color: #b88a30;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap; /* permite quebrar linha em telas menores */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cada card individual */
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 1rem;
+  color: #0b3b3c;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
 .overlay {
-  background: rgba(0, 0, 0, 0.4); /* escurece levemente para contraste */
+  background: rgba(0, 0, 0, 0.4); 
   padding: 2rem;
   text-align: center;
   border-radius: 12px;
+}
+
+
+.destino {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.fundo {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.sobre {
+  text-align: center;
+  background-color: #003b3b;
+  padding: 4rem 2rem;
+}
+
+.sobre h2 {
+  color: #b88a30;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
 .buttons {
@@ -45,4 +134,86 @@
 .btnGold:hover,
 .btnDark:hover {
   opacity: 0.85;
+}
+
+/* ===============================
+   MEDIA QUERIES - RESPONSIVIDADE
+================================= */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    height: 80vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .overlay {
+    padding: 1.5rem 2rem;
+  }
+
+  .destinos {
+    padding: 3rem 1.5rem;
+  }
+
+  .cardsContainer {
+    gap: 1.5rem;
+  }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+
+  .overlay {
+    padding: 1.5rem;
+  }
+
+  .destinos h2 {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .btnGold,
+  .btnDark {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .overlay {
+    padding: 1rem;
+  }
+
+  .destinos {
+    padding: 2.5rem 1rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
 }

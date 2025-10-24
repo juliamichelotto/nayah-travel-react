@@ -20,3 +20,71 @@
   height: 50px; /* ajuste conforme necessário */
   object-fit: contain;
 }
+.btnGold { 
+  color: #CFA052;
+  border: 2px solid #CFA052 ; 
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ======== MEDIA QUERIES ======== */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+  nav {
+    gap: 1rem;
+  }
+
+  .btnGold {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #003b3b;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  .btnGold {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+  .logo {
+    height: 40px;
+  }
+
+  .btnGold {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
