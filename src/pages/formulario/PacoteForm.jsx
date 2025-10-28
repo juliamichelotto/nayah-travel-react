@@ -1,71 +1,67 @@
 import React from "react";
 import styles from "./FormPage.module.css";
 
-export default function FormOrcamento({ tipo }) {
-  const [formData, setFormData] = useState({
-    nome: "",
-    email: "",
-    celular: "",
-    embarque: "",
-    retorno: "",
-    origem: "",
-    destino: "",
-    tipoVoo: "",
-    classe: "",
-    adultos: "",
-    criancas: "",
-    bebes: "",
-    observacoes: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Dados enviados:", formData);
-    alert("Mensagem enviada com sucesso!");
-  };
-
+const PacoteForm = () => {
   return (
-    <div className={styles.container}>
-      <h2>Peça seu orçamento de {tipo}</h2>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <input type="text" name="nome" placeholder="Nome" onChange={handleChange} />
+    <div className={styles.formContainer}>
+      <h2>Solicite sua Viagem</h2>
+      <form className={styles.form}>
+        <input type="text" placeholder="Nome" required />
+        <input type="email" placeholder="E-mail" required />
+        <input type="tel" placeholder="Celular" required />
         <div className={styles.row}>
-          <input type="email" name="email" placeholder="E-mail" onChange={handleChange} />
-          <input type="text" name="celular" placeholder="Celular" onChange={handleChange} />
+          <h3>Data de embarque</h3>
+          <input type="date" placeholder="Data de embarque" required />
+          <h3>Data de retorno</h3>
+          <input type="date" placeholder="Data de retorno" required />
         </div>
+         <div className={styles.row}>
+                  <input type="text" name="origem" placeholder="Origem" required />
+                  <input type="text" name="destino" placeholder="Destino" required />
+                </div>
+                  <select required>
+                    <option value="">Tipo de voo</option>
+                    <option>Ida</option>
+                    <option>Ida e volta</option>
+                  </select>
+                <div className={styles.row}>
+                  <select required>
+                    <option value="">Classe</option>
+                    <option>Econômica</option>
+                    <option>Executiva</option>
+                    <option>Primeira Classe</option>
+                  </select>
+                </div>
         <div className={styles.row}>
-          <input type="date" name="embarque" placeholder="Data de embarque" onChange={handleChange} />
-          <input type="date" name="retorno" placeholder="Data de retorno" onChange={handleChange} />
+          <input type="number" placeholder="Nº de adultos (acima de 12 anos)" />
+          <input type="number" placeholder="Nº de crianças (2 a 11 anos)" />
         </div>
-        <div className={styles.row}>
-          <input type="text" name="origem" placeholder="De" onChange={handleChange} />
-          <input type="text" name="destino" placeholder="Para" onChange={handleChange} />
-        </div>
-        <div className={styles.row}>
-          <select name="tipoVoo" onChange={handleChange}>
-            <option value="">Tipo de voo</option>
-            <option value="ida">Ida</option>
-            <option value="ida-volta">Ida e volta</option>
-          </select>
-          <select name="classe" onChange={handleChange}>
-            <option value="">Classe</option>
-            <option value="economica">Econômica</option>
-            <option value="executiva">Executiva</option>
-            <option value="primeira">Primeira classe</option>
-          </select>
-        </div>
-        <div className={styles.row}>
-          <input type="number" name="adultos" placeholder="Nº de Adultos (acima de 12 anos)" onChange={handleChange} />
-          <input type="number" name="criancas" placeholder="Nº de Crianças (2 a 11 anos)" onChange={handleChange} />
-        </div>
-        <input type="number" name="bebes" placeholder="Nº de Bebês (até 23 meses)" onChange={handleChange} />
-        <textarea name="observacoes" placeholder="Observações" onChange={handleChange}></textarea>
-        <button type="submit" className={styles.btnEnviar}>Enviar mensagem</button>
+        <input type="number" placeholder="Nº de bebês (até 23 meses)" />
+                  <input type="text" name="hospedagem" placeholder="Hotel - Cidade" required />
+                 <div className={styles.row}>
+                   <h3>Data de CheckIn</h3> 
+                          <input type="date" placeholder="Data de CheckIn" required />
+                    <h3>Data de CheckOut</h3> 
+                          <input type="date" placeholder="Data de CheckOut" required />
+                        </div>
+                         <select required>
+          <option value="">Categoria</option>
+          <option>1 estrela</option>
+          <option>2 estrelas</option>
+          <option>3 estrelas</option>
+          <option>4 estrelas</option>
+          <option>5 estrelas</option>
+        </select>
+            <select required>
+          <option value="">Refeições</option>
+          <option>Somente Hospedagem</option>
+          <option>Café da manhã incluso</option>
+        </select>
+        <textarea placeholder="Observações"></textarea>
+        <button type="submit">Enviar</button>
       </form>
     </div>
   );
-}
+};
+
+export default PacoteForm;

@@ -64,7 +64,7 @@ export default function FormOrcamento({ tipo }) {
         </div>
         <input type="number" name="bebes" placeholder="Nº de Bebês (até 23 meses)" onChange={handleChange} />
         <textarea name="observacoes" placeholder="Observações" onChange={handleChange}></textarea>
-        <button type="submit" className={styles.btnEnviar}>Enviar mensagem</button>
+        <button type="submit" className={styles.btnEnviar}>Enviar</button>
       </form>
     </div>
   );

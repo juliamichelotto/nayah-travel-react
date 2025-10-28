@@ -28,7 +28,7 @@ const CruzeirosForm = () => {
         </div>
         <input type="number" placeholder="Nº de bebês (até 23 meses)" />
         <textarea placeholder="Observações"></textarea>
-        <button type="submit">Enviar mensagem</button>
+        <button type="submit">Enviar</button>
       </form>
     </div>
   );

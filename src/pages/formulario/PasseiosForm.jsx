@@ -17,7 +17,7 @@ const PasseiosForm = () => {
           <input type="number" placeholder="Nº de crianças" />
         </div>
         <textarea placeholder="Observações"></textarea>
-        <button type="submit">Enviar mensagem</button>
+        <button type="submit">Enviar</button>
       </form>
     </div>
   );

@@ -27,13 +27,13 @@ const categorias = [
   {
     nome: 'Passagem aérea',
     img: '/src/assets/categorias/aviao.jpg',
-    tipo: 'passagem',
+    tipo: 'passagens',
     cor: '#cfa052'
   },
   {
     nome: 'Cruzeiros',
     img: '/src/assets/categorias/navio.jpg',
-    tipo: 'carro',
+    tipo: 'cruzeiros',
     cor: '#0b3b3c'
   },
   {
@@ -76,7 +76,7 @@ const categorias = [
           <div
             key={i}
             className={styles.card}
-            onClick={() => navigate(`/orcamento/${c.tipo}`)}
+            onClick={() => navigate(`/form/${c.tipo}`)}
           >
             <img src={c.img} alt={c.nome} />
             <h3>{c.nome}</h3>
@@ -87,7 +87,7 @@ const categorias = [
 
     <section id="destino" className={styles.destinos}>
 <div className={styles.destino}>
-   <h3>Destinos Principais</h3>
+   <h2>Destinos Principais</h2>
     {destinos.map((destino, index) => (
             <div key={index} className={styles.card}>
               <img src={destino.imagem} alt={destino.nome} />
