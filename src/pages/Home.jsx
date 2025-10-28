@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Home.module.css';
 import { useNavigate } from "react-router-dom";
-
+import { Typewriter } from 'react-simple-typewriter';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ const categorias = [
   return (
     <>
     <section id="home" className={styles.hero}>
-      <div className={styles.overlay}>
+      <div className={styles.overlayHome}>
         <h1>A vida é agora, viaje!</h1>
         <p>Descubra os melhores destinos com a Nayah Travel.</p>
         <div className={styles.buttons}>
@@ -67,6 +67,19 @@ const categorias = [
           <button className={styles.btnGold}>Fale conosco</button>
         </div>
       </div>
+    </section>
+
+
+    <section id="destino" className={styles.destinos}>
+         <h2>Destinos Principais</h2>
+<div className={styles.cardsContainer}>
+    {destinos.map((destino, index) => (
+            <div key={index} className={styles.card}>
+              <img src={destino.imagem} alt={destino.nome} />
+              <h3>{destino.nome}</h3>
+            </div>
+          ))}
+</div>
     </section>
 
  <section id="categorias" className={styles.categorias}>
@@ -85,23 +98,28 @@ const categorias = [
       </div>
     </section>
 
-    <section id="destino" className={styles.destinos}>
-<div className={styles.destino}>
-   <h2>Destinos Principais</h2>
-    {destinos.map((destino, index) => (
-            <div key={index} className={styles.card}>
-              <img src={destino.imagem} alt={destino.nome} />
-              <h3>{destino.nome}</h3>
-            </div>
-          ))}
-</div>
-    </section>
 
      <section id="sobre" className={styles.sobre}>
 <div  className={styles.fundo}>
-    <h3>Sobre nós</h3>
+    <h2>Sobre nós</h2>
+        {/* <div className={styles.frase_box}>
+            <div className={styles.frase}> 
+              Somos <br />
+              Controle <b>
+                <Typewriter
+                  words={['Confiança!', 'Cuidade!', 'Nayah Travel!']}
+                  loop={0}
+                  cursor
+                  cursorStyle='|'
+                  typeSpeed={100}
+                  deleteSpeed={80}
+                  delaySpeed={2000}
+                /></b>
+            </div>
+          </div> */}
 </div>
     </section>
+ 
    </>
   );
 }

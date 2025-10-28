@@ -4,7 +4,7 @@ import logo from '../assets/nayah.png';
 import Home from "../pages/Home";
 import Contato from "../pages/Contato";
 import { Link } from 'react-router-dom';
-
+// import { IoLogoInstagram  } from "react-icons/fa";
 
 const Header = () => (
   <header className={styles.header}>
@@ -26,7 +26,7 @@ const Header = () => (
 </a>
     </nav>
     <div class="sociais">
-      <button><i class="fa-brands fa-instagram"></i></button>
+      <button></button>
       <button><i class="fa-brands fa-youtube"></i></button>
       <button><i class="fa-brands fa-tiktok"></i></button>
     </div>

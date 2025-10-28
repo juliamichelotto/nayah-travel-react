@@ -11,7 +11,9 @@
     "@fortawesome/vue-fontawesome": "^3.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^7.9.4"
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.9.4",
+    "react-simple-typewriter": "^5.0.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",

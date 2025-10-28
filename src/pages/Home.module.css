@@ -28,7 +28,7 @@
 }
 
 .destinos h2 {
-  color: #b88a30;
+  color: #003b3b;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
@@ -74,7 +74,7 @@
 }
 
 
-.overlay {
+.overlayHome {
   background: rgba(0, 0, 0, 0.4); 
   padding: 2rem;
   text-align: center;
@@ -204,6 +204,21 @@
 .arrow {
   font-size: 1.5rem;
   opacity: 0.9;
+}
+
+.frase_box{
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.frase{
+    font-size: 2vw;
+    color: #FFF;
+    /*margin: 10% 0 0 23%;*/
+    position: absolute;
+    left: 23%;
+    bottom: 10%;
 }
 
 
