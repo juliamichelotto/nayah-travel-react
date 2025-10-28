@@ -12,7 +12,7 @@ const Header = () => (
       <a href='#home'>Home</a>
       <a href='#destino'>Destinos</a>
       <a href='#sobre'>Sobre</a>
-      <a href='#'>Monte sua Viagem</a>
+      <a href='#categorias'>Monte sua Viagem</a>
       <a href='Contato'  className={styles.btnGold}>Contato</a>
     </nav>
     <div class="sociais">

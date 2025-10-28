@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './Home.module.css';
+import { useNavigate } from "react-router-dom";
+
 
 export default function Home() {
+  const navigate = useNavigate();
    const destinos = [
     {
       nome: "Rio de Janeiro",
@@ -20,6 +23,39 @@ export default function Home() {
     },
   ];
 
+const categorias = [
+  {
+    nome: 'Passagem aérea',
+    img: '/src/assets/categorias/aviao.jpg',
+    tipo: 'passagem',
+    cor: '#cfa052'
+  },
+  {
+    nome: 'Cruzeiros',
+    img: '/src/assets/categorias/navio.jpg',
+    tipo: 'carro',
+    cor: '#0b3b3c'
+  },
+  {
+    nome: 'Hotel',
+    img: '/src/assets/categorias/hotel.jpg',
+    tipo: 'hotel',
+    cor: '#d1b27c'
+  },
+  {
+    nome: 'Passeios',
+    img: '/src/assets/categorias/ingressos.jpg',
+    tipo: 'passeios',
+    cor: '#145b5a'
+  },
+  {
+    nome: 'Pacote completo',
+    img: '/src/assets/categorias/malas.jpg',
+    tipo: 'pacote',
+    cor: '#b88a30'
+  }
+];
+
   return (
     <>
     <section id="home" className={styles.hero}>
@@ -30,6 +66,22 @@ export default function Home() {
           <button className={styles.btnGold}>Conheça nossos pacotes</button>
           <button className={styles.btnGold}>Fale conosco</button>
         </div>
+      </div>
+    </section>
+
+ <section id="categorias" className={styles.categorias}>
+      <h2>Monte sua viagem</h2>
+      <div className={styles.cardsContainer}>
+         {categorias.map((c, i) => (
+          <div
+            key={i}
+            className={styles.card}
+            onClick={() => navigate(`/orcamento/${c.tipo}`)}
+          >
+            <img src={c.img} alt={c.nome} />
+            <h3>{c.nome}</h3>
+          </div>
+        ))}
       </div>
     </section>
 
