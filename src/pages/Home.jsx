@@ -71,8 +71,9 @@ const categorias = [
 
 
     <section id="destino" className={styles.destinos}>
-         <h2>Destinos Principais</h2>
-<div className={styles.cardsContainer}>
+    
+         <h2>Destinos Populares</h2>
+<div className={styles.destino}>
     {destinos.map((destino, index) => (
             <div key={index} className={styles.card}>
               <img src={destino.imagem} alt={destino.nome} />
@@ -80,10 +81,12 @@ const categorias = [
             </div>
           ))}
 </div>
+
     </section>
 
  <section id="categorias" className={styles.categorias}>
       <h2>Monte sua viagem</h2>
+      
       <div className={styles.cardsContainer}>
          {categorias.map((c, i) => (
           <div
@@ -92,34 +95,49 @@ const categorias = [
             onClick={() => navigate(`/form/${c.tipo}`)}
           >
             <img src={c.img} alt={c.nome} />
+            
             <h3>{c.nome}</h3>
+   
           </div>
         ))}
       </div>
     </section>
 
 
-     <section id="sobre" className={styles.sobre}>
-<div  className={styles.fundo}>
-    <h2>Sobre nós</h2>
-        {/* <div className={styles.frase_box}>
-            <div className={styles.frase}> 
-              Somos <br />
-              Controle <b>
-                <Typewriter
-                  words={['Confiança!', 'Cuidade!', 'Nayah Travel!']}
-                  loop={0}
-                  cursor
-                  cursorStyle='|'
-                  typeSpeed={100}
-                  deleteSpeed={80}
-                  delaySpeed={2000}
-                /></b>
-            </div>
-          </div> */}
-</div>
-    </section>
- 
+    <section id="sobre" className={styles.sobre}>
+  <div className={styles.fundo}>
+    <h2>Sobre a <span>Nayah Travel</span></h2>
+
+    <p className={styles.texto}>
+      A <strong>Nayah Travel</strong> nasceu com o propósito de transformar viagens em experiências únicas.
+      Somos apaixonadas por descobrir o mundo e em ajudar você a viver cada momento com <b>tranquilidade</b>,
+      <b> segurança</b> e <b>emoção</b>.
+    </p>
+
+    <p className={styles.texto}>
+      Oferecemos os melhores <b>pacotes</b>, <b>cruzeiros</b>, <b>hospedagens</b> e <b>experiências exclusivas</b>
+      — tudo planejado com cuidado para que sua viagem seja inesquecível.
+    </p>
+
+    <div className={styles.frase_box}>
+      <div className={styles.frase}>
+        Somos <br />
+        <b>
+          <Typewriter
+            words={['Confiança!', 'Cuidado!', 'Nayah Travel!']}
+            loop={0}
+            cursor
+            cursorStyle='|'
+            typeSpeed={100}
+            deleteSpeed={80}
+            delaySpeed={2000}
+          />
+        </b>
+      </div>
+    </div>
+  </div>
+</section>
+
    </>
   );
 }

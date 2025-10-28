@@ -10,16 +10,6 @@
   color: white;
 }
 
-/* .destinos {
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: white;
-} */
 
 .destinos {
   text-align: center;
@@ -28,7 +18,7 @@
 }
 
 .destinos h2 {
-  color: #003b3b;
+  color: #b88a30;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
@@ -83,12 +73,83 @@
 
 
 .destino {
-  padding: 2rem;
-  text-align: center;
-  border-radius: 12px;
+   display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap; /* permite quebrar linha em telas menores */
+  flex: 0 0 350px; 
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.fundo {
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  width: 350px;
+  height: 450px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: #000;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  filter: brightness(80%);
+}
+
+/* Efeito de zoom e destaque ao passar o mouse */
+.card:hover img {
+  transform: scale(1.1);
+  filter: brightness(60%);
+}
+
+/* Gradiente escuro no fundo para legibilidade */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+  z-index: 1;
+}
+
+/* Nome do destino */
+.card h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  z-index: 2;
+  text-align: left;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.card:hover h3 {
+  transform: translateY(-5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    height: 350px;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* .fundo {
   padding: 2rem;
   text-align: center;
   border-radius: 12px;
@@ -104,7 +165,7 @@
   color: #b88a30;
   font-size: 2rem;
   margin-bottom: 2rem;
-}
+} */
 
 .buttons {
   margin-top: 1.5rem;
@@ -202,25 +263,129 @@
 }
 
 .arrow {
-  font-size: 1.5rem;
-  opacity: 0.9;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.2rem;
+  color: #003b3b;
+  transition: transform 0.3s ease;
 }
 
+.sobre {
+  background: linear-gradient(180deg, #003b3b 0%, #022e2e 100%);
+  padding: 5rem 2rem;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.fundo {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.sobre h2 {
+  color: #b88a30;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.sobre h2 span {
+  color: #fff;
+}
+
+.texto {
+  color: #f2f2f2;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.frase_box {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.frase {
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* --- ANIMAÇÃO LEVE --- */
+.sobre::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  top: -100px;
+  left: -100px;
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+.sobre::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(184,138,48,0.15) 0%, transparent 70%);
+  bottom: -80px;
+  right: -80px;
+  animation: float 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(15px); }
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+  .fundo {
+    padding: 2rem;
+  }
+
+  .sobre h2 {
+    font-size: 1.8rem;
+  }
+
+  .texto {
+    font-size: 1rem;
+  }
+
+  .frase {
+    font-size: 1.2rem;
+  }
+}
+/* 
 .frase_box{
-    width: 80%;
-    height: 100%;
-    position: absolute;
+    width: 100%;
+    height:60%;
     bottom: 0;
 }
 .frase{
     font-size: 2vw;
     color: #FFF;
-    /*margin: 10% 0 0 23%;*/
-    position: absolute;
     left: 23%;
     bottom: 10%;
-}
+} */
 
+/* .frase b {
+  color: #b88a30;
+} */
 
 /* ===============================
    MEDIA QUERIES - RESPONSIVIDADE
