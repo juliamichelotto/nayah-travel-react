@@ -2,14 +2,16 @@ import React from 'react';
 import styles from './Home.module.css';
 import { useNavigate } from "react-router-dom";
 import { Typewriter } from 'react-simple-typewriter';
+import nassira from '../assets/nassira.png';
+import yara from '../assets/yara.png';
+
 
 export default function Home() {
   const navigate = useNavigate();
    const destinos = [
     {
-      nome: "Rio de Janeiro",
-      imagem:
-        "https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmlvJTIwZGUlMjBqYW5laXJvfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",
+      nome: "Orlando",
+      imagem  : '/src/assets/dinesy.jpg',
     },
     {
       nome: "Paris",
@@ -17,9 +19,13 @@ export default function Home() {
         "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
     },
     {
-      nome: "Cancún",
+      nome: "Punta Cana",
       imagem:
         "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    },
+      {
+      nome: "Itacaré",
+        img: '/src/assets/disney.jpg'
     },
   ];
 
@@ -43,12 +49,6 @@ const categorias = [
     cor: '#d1b27c'
   },
   {
-    nome: 'Passeios',
-    img: '/src/assets/categorias/ingressos.jpg',
-    tipo: 'passeios',
-    cor: '#145b5a'
-  },
-  {
     nome: 'Pacote completo',
     img: '/src/assets/categorias/malas.jpg',
     tipo: 'pacote',
@@ -62,10 +62,10 @@ const categorias = [
       <div className={styles.overlayHome}>
         <h1>A vida é agora, viaje!</h1>
         <p>Descubra os melhores destinos com a Nayah Travel.</p>
-        <div className={styles.buttons}>
+        {/* <div className={styles.buttons}>
           <button className={styles.btnGold}>Conheça nossos pacotes</button>
           <button className={styles.btnGold}>Fale conosco</button>
-        </div>
+        </div> */}
       </div>
     </section>
 
@@ -124,7 +124,7 @@ const categorias = [
         Somos <br />
         <b>
           <Typewriter
-            words={['Confiança!', 'Cuidado!', 'Nayah Travel!']}
+            words={['Confiança!', 'Prontidão!', 'Dedicação!','Profissionalismo!', 'Nayah Travel!']}
             loop={0}
             cursor
             cursorStyle='|'
@@ -133,6 +133,16 @@ const categorias = [
             delaySpeed={2000}
           />
         </b>
+      </div>
+    </div>
+      <div className={styles.fotosSobre}>
+      <div className={styles.fotoWrapper}>
+        <img src={nassira} alt="Na - Fundadora" className={styles.foto} />
+        <p className={styles.nome}>Na — Fundadora</p>
+      </div>
+      <div className={styles.fotoWrapper}>
+        <img src={yara} alt="Ya - Fundadora" className={styles.foto} />
+        <p className={styles.nome}>Ya — Fundadora</p>
       </div>
     </div>
   </div>

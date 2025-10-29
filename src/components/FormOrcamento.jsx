@@ -30,7 +30,7 @@ export default function FormOrcamento({ tipo }) {
 
   return (
     <div className={styles.container}>
-      <h2>Peça seu orçamento de {tipo}</h2>
+      <h2>Solicite sua Passagem Aérea </h2>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input type="text" name="nome" placeholder="Nome" onChange={handleChange} />
         <div className={styles.row}>
@@ -38,17 +38,20 @@ export default function FormOrcamento({ tipo }) {
           <input type="text" name="celular" placeholder="Celular" onChange={handleChange} />
         </div>
         <div className={styles.row}>
+          <h3>Data de embarque</h3>
           <input type="date" name="embarque" placeholder="Data de embarque" onChange={handleChange} />
+          <h3>Data de retorno</h3>
           <input type="date" name="retorno" placeholder="Data de retorno" onChange={handleChange} />
         </div>
         <div className={styles.row}>
-          <input type="text" name="origem" placeholder="De" onChange={handleChange} />
-          <input type="text" name="destino" placeholder="Para" onChange={handleChange} />
+          <input type="text" name="origem" placeholder="Origem" onChange={handleChange} />
+          <input type="text" name="destino" placeholder="Destino" onChange={handleChange} />
         </div>
         <div className={styles.row}>
           <select name="tipoVoo" onChange={handleChange}>
             <option value="">Tipo de voo</option>
             <option value="ida">Ida</option>
+            <option value="ida">Volta</option>
             <option value="ida-volta">Ida e volta</option>
           </select>
           <select name="classe" onChange={handleChange}>

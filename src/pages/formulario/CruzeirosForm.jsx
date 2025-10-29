@@ -9,11 +9,27 @@ const CruzeirosForm = () => {
         <input type="text" placeholder="Nome" required />
         <input type="email" placeholder="E-mail" required />
         <input type="tel" placeholder="Celular" required />
-        <input type="text" placeholder="Destino do cruzeiro" required />
-        <input type="text" placeholder="Companhia de cruzeiro" />
         <div className={styles.row}>
-          <input type="date" placeholder="Data de embarque" required />
-          <input type="date" placeholder="Data de desembarque" required />
+           <select required>
+          <option value="">Destino</option>
+          <option>Nacional</option>
+          <option>Internacional</option>
+        </select>
+        <select required>
+          <option value="">Mês de Embarque</option>
+          <option>Janeiro</option>
+          <option>Fevereiro</option>
+          <option>Março</option>
+          <option>Abril</option>
+          <option>Maio</option>
+          <option>Junho</option>
+          <option>Julho</option>
+          <option>Agosto</option>
+          <option>Setembro</option>
+          <option>Outubro</option>
+          <option>Novembro</option>
+          <option>Dezembro</option>
+        </select>
         </div>
         <select required>
           <option value="">Tipo de cabine</option>

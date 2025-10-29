@@ -11,21 +11,17 @@ const HotelForm = () => {
         <input type="tel" placeholder="Celular" required />
         <input type="text" placeholder="Cidade" required />
         <div className={styles.row}>
+           <h3>Data de CheckIn</h3> 
           <input type="date" placeholder="Data de CheckIn" required />
+          <h3>Data de CheckOut</h3> 
           <input type="date" placeholder="Data de CheckOut" required />
         </div>
-        <select required>
-          <option value="">Categoria</option>
-          <option>1 estrela</option>
-          <option>2 estrelas</option>
-          <option>3 estrelas</option>
-          <option>4 estrelas</option>
-          <option>5 estrelas</option>
-        </select>
             <select required>
           <option value="">Refeições</option>
-          <option>Somente Hospedagem</option>
-          <option>Café da manhã incluso</option>
+          <option>Café da manhã</option>
+          <option>Meia Pensão</option>
+          <option>Pensão Completa</option>
+          <option>All Inclusive</option>
         </select>
         <div className={styles.row}>
           <input type="number" placeholder="Nº de adultos (acima de 12 anos)" />
