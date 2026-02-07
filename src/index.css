@@ -1,7 +1,17 @@
+@import "tailwindcss";
+
+:root {
+  --color-golden-400: #f7c75a;
+  --color-golden-300: #f9d486;
+  --color-golden-200: #fbe213;
+  --color-golden-100: #d1a954;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
+  
 }
 
 html {
