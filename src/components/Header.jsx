@@ -24,6 +24,7 @@ const Header = () => {
           <a href="#home">Home</a>
           <a href="#destino">Destinos</a>
           <a href="#categorias">Monte sua Viagem</a>
+          <a href="#depoimentos">Depoimentos</a>
           <a href="#sobre">Sobre</a>
           <a
             href="https://wa.me/55013988734836"
